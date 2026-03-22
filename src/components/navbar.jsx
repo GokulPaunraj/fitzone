@@ -50,7 +50,7 @@ const Navbar = () => {
 
         {/* CTA BUTTON */}
         <a
-          href="#contact"
+          href="#pricing"
           className="hidden md:inline-block bg-gradient-to-r from-red-500 to-orange-500 
           px-5 py-2 rounded-lg text-sm font-semibold shadow-[0_0_15px_rgba(239,68,68,0.6)] 
           hover:opacity-90 transition"

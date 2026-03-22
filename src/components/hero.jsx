@@ -77,13 +77,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="bg-gradient-to-r from-red-500 to-orange-500 px-6 py-3 rounded-lg shadow-[0_0_30px_rgba(239,68,68,0.6)] hover:scale-105 transition">
+            <a href="#pricing" className="bg-gradient-to-r from-red-500 to-orange-500 px-6 py-3 rounded-lg shadow-[0_0_30px_rgba(239,68,68,0.6)] hover:scale-105 transition">
               Start Your Journey
-            </button>
+            </a>
 
-            <button className="border border-gray-600 px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
+            <a href="#pricing" className="border border-gray-600 px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
               View Plans
-            </button>
+            </a>
           </div>
         </div>
 
