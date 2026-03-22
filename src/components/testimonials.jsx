@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Rohit Verma",
     role: "Member",
-    text: "FitZone completely transformed my fitness journey. The trainers are supportive and the environment is highly motivating.",
+    text: "FakeFitZone completely transformed my fitness journey. The trainers are supportive and the environment is highly motivating.",
   },
   {
     name: "Ankit Patel",

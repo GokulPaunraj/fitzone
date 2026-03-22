@@ -1,4 +1,40 @@
+import { useEffect, useState } from "react";
+
+const text = "Build Your Strength";
+
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+
+    if (!isDeleting && index < text.length) {
+      // Typing
+      timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + text[index]);
+        setIndex(index + 1);
+      }, 80);
+    } else if (!isDeleting && index === text.length) {
+      // Pause before deleting
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, 1200);
+    } else if (isDeleting && index > 0) {
+      // Deleting
+      timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev.slice(0, -1));
+        setIndex(index - 1);
+      }, 40);
+    } else if (isDeleting && index === 0) {
+      // Restart typing
+      setIsDeleting(false);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [index, isDeleting]);
+
   return (
     <section
       id="home"
@@ -10,7 +46,12 @@ const Hero = () => {
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
             Transform Your Body <br />
-            <span className="text-red-500">Build Your Strength</span>
+            
+            <span className="text-red-500">
+              {displayedText}
+              <span className="animate-pulse">|</span>
+            </span>
+
           </h1>
 
           <p className="text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">

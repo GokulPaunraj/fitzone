@@ -26,22 +26,22 @@ const Contact = () => {
             </h3>
 
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Have a project in mind or want to join FitZone? Feel free to reach out.
+              Have a project in mind or want to join FakeFitZone? Feel free to reach out.
               I’m always open to discussing new ideas and opportunities.
             </p>
 
             <div className="space-y-4 text-gray-300 text-sm">
               <p className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-red-500" />
-                Coimbatore, Tamil Nadu
+                Madurai, Tamil Nadu
               </p>
               <p className="flex items-center gap-3">
                 <FaPhoneAlt className="text-red-500" />
-                +91 98765 43210
+                +91 1234567890
               </p>
               <p className="flex items-center gap-3">
                 <FaEnvelope className="text-red-500" />
-                fitzone@email.com
+                fakefitzone@email.com
               </p>
             </div>
           </div>

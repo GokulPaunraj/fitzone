@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-6 md:px-16 py-4 bg-black/70 backdrop-blur-md text-white sticky top-0 z-50">
-      <h1 className="text-2xl font-bold text-red-500">FitZone</h1>
+      <h1 className="text-2xl font-bold text-red-500">FakeFitZone</h1>
 
       <ul className="hidden md:flex gap-8">
         <li><a href="#home" className="hover:text-red-500">Home</a></li>
