@@ -1,19 +1,65 @@
+import { useState, useEffect } from "react";
+
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  // 👇 Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="flex justify-between items-center px-6 md:px-16 py-4 bg-black/70 backdrop-blur-md text-white sticky top-0 z-50">
-      <h1 className="text-2xl font-bold text-red-500">FakeFitZone</h1>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition duration-300 
+      ${
+        scrolled
+          ? "bg-white/10 backdrop-blur-lg border-b border-white/10 shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
 
-      <ul className="hidden md:flex gap-8">
-        <li><a href="#home" className="hover:text-red-500">Home</a></li>
-        <li><a href="#programs" className="hover:text-red-500">Programs</a></li>
-        <li><a href="#pricing" className="hover:text-red-500">Pricing</a></li>
-        <li><a href="#contacts" className="hover:text-red-500">Contact</a></li>
-      </ul>
+        {/* LOGO */}
+        <h1 className="text-xl font-bold tracking-wide">
+          Fake<span className="text-red-500">Fit</span>Zone
+        </h1>
 
-      <button className="bg-gradient-to-r from-red-500 to-orange-500 px-5 py-2 rounded-lg shadow-[0_0_20px_rgba(239,68,68,0.6)] hover:opacity-90">
-        Join Now
-      </button>
-    </nav>
+        {/* NAV LINKS */}
+        <nav className="hidden md:flex gap-8 text-sm font-medium">
+          <a href="#home" className="hover:text-red-500 transition">
+            Home
+          </a>
+          <a href="#programs" className="hover:text-red-500 transition">
+            Programs
+          </a>
+          <a href="#pricing" className="hover:text-red-500 transition">
+            Pricing
+          </a>
+          <a href="#trainers" className="hover:text-red-500 transition">
+            Trainers
+          </a>
+          <a href="#contact" className="hover:text-red-500 transition">
+            Contact
+          </a>
+        </nav>
+
+        {/* CTA BUTTON */}
+        <a
+          href="#contact"
+          className="hidden md:inline-block bg-gradient-to-r from-red-500 to-orange-500 
+          px-5 py-2 rounded-lg text-sm font-semibold shadow-[0_0_15px_rgba(239,68,68,0.6)] 
+          hover:opacity-90 transition"
+        >
+          Join Now
+        </a>
+
+      </div>
+    </header>
   );
 };
 
