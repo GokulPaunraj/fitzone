@@ -59,8 +59,8 @@ const Pricing = () => {
               className={`flex flex-col justify-between rounded-2xl p-8 border transition duration-300
               ${
                 plan.highlight
-                  ? "bg-gradient-to-b from-red-500 to-red-700 text-white border-transparent scale-105 shadow-[0_0_30px_rgba(239,68,68,0.5)]"
-                  : "bg-gray-900 border-gray-800 hover:border-red-500"
+                  ? "bg-gradient-to-b from-red-500 to-red-700 text-white border-transparent scale-105 hover:scale-110 shadow-[0_0_30px_rgba(239,68,68,0.5)]"
+                  : "bg-gray-900 border-gray-800 hover:scale-105 hover:border-red-500"
               }`}
             >
 
@@ -90,7 +90,7 @@ const Pricing = () => {
                 className={`w-full py-3 rounded-lg font-semibold transition
                 ${
                   plan.highlight
-                    ? "bg-black text-white hover:bg-gray-800"
+                    ? "bg-black text-white hover:bg-gray-800 "
                     : "bg-red-500 hover:bg-red-600"
                 }`}
               >
